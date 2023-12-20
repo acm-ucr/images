@@ -10,7 +10,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     cwebp -quiet $FILE -o $NEW
 
     WEBP=${FILEPATH/$EXT/webp}
-    sed -i '' -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js'`
+    sed -i '' -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js' -or -name '*tsx' -or -name '*.ts'`
 
     rm $FILE
 done
