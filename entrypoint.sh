@@ -22,6 +22,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     echo "src files"
     cd src
     ls
+    cat Test.jsx
     cd ..
     echo $FILE
     rm $FILE
