@@ -13,7 +13,8 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
 
     WEBP=${FILEPATH/$EXT/webp}
     echo $FILEPATH $WEBP $(find ./src -name '*.jsx' -or -name '*.js')
-    echo "hello" $PWD $LS
+    echo "hello" $PWD
+    ls
     sed -i '' -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js' -or -name '*tsx' -or -name '*.ts'`
 
     rm $FILE
