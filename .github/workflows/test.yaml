@@ -1,0 +1,16 @@
+name: Images Action
+
+on:
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    name: Images
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Running Image Conversion
+        uses: ./
