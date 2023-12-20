@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apk update && apk add libwebp-tools
+
 for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); do 
     FILEPATH=$(basename $FILE)
     
