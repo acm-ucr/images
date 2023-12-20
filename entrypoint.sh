@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); do 
     FILEPATH=$(basename $FILE)
     
