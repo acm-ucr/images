@@ -15,10 +15,14 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     echo $FILEPATH $WEBP $(find ./src -name '*.jsx' -or -name '*.js')
     sed -i -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js' -or -name '*tsx' -or -name '*.ts'`
     ls
+    echo "public files"
     cd public
     ls
     cd ..
+    echo "src files"
     cd src
     ls
+    cd ..
+    echo $FILE
     rm $FILE
 done
