@@ -1,3 +1,7 @@
+#!/bin/sh
+
+apk update && apk add libwebp-tools
+
 for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); do 
     FILEPATH=$(basename $FILE)
     
@@ -5,10 +9,9 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     EXT="${FILEPATH##*.}"
 
     NEW=${FILE/$EXT/webp}
-    cwebp -quiet $FILE -o $NEW
+    cwebp $FILE -o $NEW
 
     WEBP=${FILEPATH/$EXT/webp}
-    sed -i '' -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js'`
-
+    sed -i -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js' -or -name '*tsx' -or -name '*.ts'`
     rm $FILE
 done
