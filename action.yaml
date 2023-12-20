@@ -1,0 +1,5 @@
+name: "Compress Images to webp"
+description: "Compress images in /public using cwebp"
+runs:
+  using: "docker"
+  image: "Dockerfile"
