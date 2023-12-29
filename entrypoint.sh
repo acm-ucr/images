@@ -15,3 +15,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     sed -i -e "s/$FILEPATH/$WEBP/g" `find ./src -name '*.jsx' -or -name '*.js' -or -name '*tsx' -or -name '*.ts'`
     rm $FILE
 done
+
+git checkout -b acm-ucr/images
+
+gh pr create --base main --head acm-ucr/images --title "Update Images to Webp" --body "Updating images to webp"
