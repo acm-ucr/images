@@ -20,4 +20,11 @@ done
 
 git checkout -b acm-ucr/images
 
+git log
+
+git add .
+git commit -m "convert images to webp"
+
+git log
+
 gh pr create --base main --head acm-ucr/images --title "Update Images to Webp" --body "Updating images to webp"
