@@ -14,3 +14,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Running Image Conversion
         uses: ./
+    env:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
