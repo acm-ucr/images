@@ -17,7 +17,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     rm $FILE
 done
 
-if [ $CREATE_PR ]; then
+if $CREATE_PR; then
     git checkout -b acm-ucr/images
 
     git config user.email "fake@domain.com"
