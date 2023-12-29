@@ -18,6 +18,8 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     rm $FILE
 done
 
+git checkout acm-ucr/images
+
 git config user.email "contact.acmucr@gmail.com"
 git config user.name "ACM UCR"
 
