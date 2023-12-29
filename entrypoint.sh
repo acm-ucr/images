@@ -27,5 +27,7 @@ git add .
 git commit -m "convert images to webp"
 
 git branch
+git checkout main
+git branch
 
 gh pr create --base main --title "Update Images to Webp" --body "Updating images to webp"
