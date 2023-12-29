@@ -18,15 +18,10 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     rm $FILE
 done
 
-# git checkout -b acm-ucr/images
-
 git config user.email "contact.acmucr@gmail.com"
 git config user.name "ACM UCR"
 
-git checkout -b acm-ucr/images
 git add .
 git commit -m "convert images to webp"
 
-git fetch origin main
-
-gh pr create --base main --head acm-ucr/images --title "Update Images to Webp" --body "Updating images to webp"
+gh pr create --base acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp"
