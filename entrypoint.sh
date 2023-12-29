@@ -1,7 +1,7 @@
 #!/bin/sh
 
 error(){
-    echo "Error: a PR might already exist, which may need to be merged! Checkout branches from acm-ucr/images"
+    echo "Error: a PR might already exist, which may need to be merged! Checkout branches from acm-ucr/images"  >> $GITHUB_OUTPUT
     exit 1
 } 
 
