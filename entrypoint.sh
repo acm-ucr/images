@@ -28,4 +28,4 @@ git commit -m "convert images to webp"
 
 git branch
 
-gh pr create --base main --head acm-ucr/images --title "Update Images to Webp" --body "Updating images to webp"
+gh pr create --base main --title "Update Images to Webp" --body "Updating images to webp"
