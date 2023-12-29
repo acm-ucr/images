@@ -3,3 +3,5 @@ description: "Compress images in /public using cwebp"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.branch }}
