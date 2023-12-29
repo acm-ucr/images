@@ -27,5 +27,5 @@ if $CREATE_PR; then
 
     git push origin acm-ucr/images
 
-    gh pr create --base shahdivyank/test_pr_creation --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action"
+    gh pr create --base $1 --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action"
 fi
