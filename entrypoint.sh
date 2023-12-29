@@ -1,10 +1,9 @@
 #!/bin/sh
 
-apk update && apk add libwebp-tools
-
-apk add git 
+CREATE_PR=false
 
 for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); do 
+    CREATE_PR=true
     FILEPATH=$(basename $FILE)
     
     FILENAME=${FILEPATH%.*}
@@ -18,14 +17,15 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
     rm $FILE
 done
 
-git checkout -b acm-ucr/images
+if [ $CREATE_PR ]; then
+    git checkout -b acm-ucr/images
 
-git config user.email "contact.acmucr@gmail.com"
-git config user.name "ACM UCR"
+    git config user.email "fake@domain.com"
+    git config user.name "ACM UCR"
 
-git add .
-git commit -m "convert images to webp"
+    git add . && git commit -m "convert images to webp"
 
-git push origin acm-ucr/images
+    git push origin acm-ucr/images
 
-gh pr create --base shahdivyank/test_pr_creation --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp"
+    gh pr create --base shahdivyank/test_pr_creation --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action"
+fi
