@@ -24,4 +24,4 @@ git config user.name "ACM UCR"
 git add .
 git commit -m "convert images to webp"
 
-gh pr create --base acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp"
+gh pr create --base shahdivyank/test_pr_creation --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp"
