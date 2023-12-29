@@ -16,6 +16,10 @@ steps:
     uses: actions/checkout@v4
   - name: Running Image Conversion
     uses: acm-ucr/images@v2
+    with:
+      branch: ${{ github.head_ref }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## Commands

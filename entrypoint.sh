@@ -1,5 +1,10 @@
 #!/bin/sh
 
+error(){
+    echo "Error: a PR might already exist, which may need to be merged! The branch is named acm-ucr/images"  >> $GITHUB_OUTPUT
+    exit 1
+} 
+
 CREATE_PR=false
 
 for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); do 
@@ -27,5 +32,5 @@ if $CREATE_PR; then
 
     git push origin acm-ucr/images
 
-    gh pr create --base $1 --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action"
+    gh pr create --base $1 --head acm-ucr/images  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action to merge into $1" || error
 fi
