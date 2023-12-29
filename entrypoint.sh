@@ -20,14 +20,12 @@ done
 
 git checkout -b acm-ucr/images
 
-git log
-
 git config user.email "contact.acmucr@gmail.com"
 git config user.name "ACM UCR"
 
 git add .
 git commit -m "convert images to webp"
 
-git log
+git branch
 
 gh pr create --base main --head acm-ucr/images --title "Update Images to Webp" --body "Updating images to webp"
