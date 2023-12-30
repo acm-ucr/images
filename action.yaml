@@ -1,5 +1,10 @@
 name: "Compress Images to webp"
 description: "Compress images in /public using cwebp"
+
+branding:
+  icon: "image"
+  color: "blue"
+
 runs:
   using: "docker"
   image: "Dockerfile"
