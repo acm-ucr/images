@@ -24,14 +24,14 @@ done
 
 if $CREATE_PR; then
     uuid=$(openssl rand -hex 8)
-    git checkout -b acm-ucr/images_$(uuid)
+    git checkout -b acm-ucr/images_$uuid
 
     git config user.email "fake@domain.com"
     git config user.name "ACM UCR"
 
     git add . && git commit -m "convert images to webp"
 
-    git push origin acm-ucr/images_$(uuid)
+    git push origin acm-ucr/images_$uuid
 
-    gh pr create --base $1 --head acm-ucr/images_$(uuid)  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action to merge into $1" || error
+    gh pr create --base $1 --head acm-ucr/images_$uuid  --title "Update Images to Webp" --body "Updating images to webp via acm-ucr/images Github Action to merge into $1" || error
 fi
