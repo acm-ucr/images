@@ -23,7 +23,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
 done
 
 if $CREATE_PR; then
-    uuid = $(openssl rand -hex 8)
+    uuid=$(openssl rand -hex 8)
     git checkout -b acm-ucr/images_$(uuid)
 
     git config user.email "fake@domain.com"
