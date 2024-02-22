@@ -23,7 +23,7 @@ for FILE in $(find ./public -name '*.png' -or -name '*.jpg' -or -name '*jpeg'); 
 done
 
 if $CREATE_PR; then
-    git checkout -b acm-ucr/images
+    git checkout -b acm-ucr/images_$(uuidgen)
 
     git config user.email "fake@domain.com"
     git config user.name "ACM UCR"
